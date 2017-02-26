@@ -26,6 +26,12 @@
 
               </center>
 
+              <p class="text-center">
+                @if(Auth::id()==$user->id)
+                  <a href="{{ route('profile.edit')}}" class="btn btn-lg btn-info">Edit your profile</a>
+                @endif
+              </p>
+
             </div>
 
           </div>
