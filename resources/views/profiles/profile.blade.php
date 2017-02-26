@@ -10,24 +10,13 @@
 
             <div class="panel-heading">
 
-              <p class="text-center">
-
-                  {{ $user -> name}}'s Profile.
-
-              </p>
+              {{ $user -> name}}'s Profile.
 
             </div>
 
             <div class="panel-body">
-
-              <center>
-
-                  <img src="{{ Storage::url($user->avatar) }}" width="100px" height="100px" style="border-radius: 50%;" alt="">
-
-              </center>
-
+              <img src="{{ Storage::url($user->avatar) }}" width="70px" height="70px" style="border-radius: 50%;" alt="">
             </div>
-
           </div>
 
         </div>

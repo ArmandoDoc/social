@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Profile;
 use App\User;
-use Validation;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Database\Migrations\Migration; //auto ithele
 
 class RegisterController extends Controller
 {
@@ -76,7 +73,7 @@ class RegisterController extends Controller
         {
           $avatar = 'public/defaults/avatars/female.jpg';
         }
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -84,8 +81,5 @@ class RegisterController extends Controller
             'gender' =>$data['gender'],
             'avatar' => $avatar
         ]);
-
-        Profile::create(['user_id' => $user->id ]);
-        return $user;
     }
 }
